@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {SafeAreaView, View, StyleSheet} from 'react-native';
 
 import Button from './components/Button'
+import Display from './components/Display'
 
-export default () => {
+export default class App extends Component{
+  state = {
+    displayValue: '0'
+  }
+
+  render(){
     return(
       <SafeAreaView style={styles.container}>
+        <Display value = {this.state.displayValue}/>
         <View style={styles.buttons}>
           <Button label = 'AC'/>
           <Button label = '/'/>
@@ -27,6 +34,7 @@ export default () => {
         </View>
       </SafeAreaView>
     )
+  }
 }
 
 const styles = StyleSheet.create({
